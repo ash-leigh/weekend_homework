@@ -51,6 +51,12 @@ def customer_pet_count(customers)
   return customers[:pets].length
 end
 
+def add_pet_to_customer(customers, new_pet)
+  return customers[:pets] << new_pet
+end
+
+
+
 
 
 
