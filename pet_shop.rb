@@ -59,9 +59,9 @@ def customer_can_afford_pet(customers, new_pet)
   return customers[:cash] > new_pet[:price]
 end
 
-def sell_pet_to_customer (pet_shop, pet, customers)
-  if pet != nil
-  add_pet_to_customer(customers, pet)
+def sell_pet_to_customer (pet_shop, pet, customer)
+  if pet != nil && customer[:cash] > pet[:price]
+  add_pet_to_customer(customer, pet)
   increase_pets_sold(pet_shop, 1)
   add_or_remove_cash(pet_shop, pet[:price])
   end
